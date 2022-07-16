@@ -1,4 +1,5 @@
-class ProductPage {
+
+class MainPage {
     #productData = {};
     #databaseLink = "https://dummyjson.com/products";
     #currentCategory = "";
@@ -67,5 +68,5 @@ class ProductPage {
 
 }
 
-const myApp = new ProductPage();
+const myApp = new MainPage();
 myApp.run();

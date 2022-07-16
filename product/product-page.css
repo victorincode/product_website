@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.master-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    background-color: rgb(2, 51, 50);
+}
+
+main.main-container {
+    width: 96vw;
+    height: 100vh;
+    display: flex;
+}
+
+article.product-container {
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4vh;
+}
+
+section.view-thumbnails{
+    width: 100%;
+}
+section.view-thumbnails ul{
+    width: 100%;
+    display: flex; 
+    flex-wrap: wrap;
+    overflow: auto;
+    list-style: none;
+}
+section.view-thumbnails ul li img{
+    width: 96vw;
+
+}
+section.item-information-container{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+/* This is for the price */
+section.item-information-container h2{
+
+}
