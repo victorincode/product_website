@@ -6,6 +6,7 @@
 body, html{
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 header{
     position: fixed;
@@ -24,19 +25,16 @@ article.product-content{
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* background-color: green; */
 }
 
 section.product-by-category{
     width: 100vw;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5vh;
     height: 60vh;
-    background-color: blue;
 }
 section.product-by-category#smartphones{
     background-color: white;
@@ -57,11 +55,14 @@ section.product-by-category#skincare{
     font-size: 3rem;
     text-transform: capitalize;
 }
+section ul::-webkit-scrollbar{
+    display: none;
+}
 section ul{
     display: flex;
-    width: 86vw;
+    width: 80vw;
     overflow: auto;
-    gap: 1vw;
+    gap: 4vw;
 }
 
 section h3{
@@ -73,8 +74,8 @@ section li{
 
 }
 section li img{
-    width: 20vw;
-    height: 20vh;
+    width: 80vw;
+    height: 30vh;
     border-radius: 10px;
     margin-bottom: 1vh;
 }
