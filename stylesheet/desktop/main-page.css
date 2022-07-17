@@ -1,13 +1,13 @@
 
 @media (min-width: 600px) {
-    section ul {
+    section.product-by-category ul {
         display: flex;
         width: 84vw;
         overflow: auto;
         gap: 1vw;
     }
 
-    section li img {
+    section.product-by-category li img {
         width: 40vw;
         height: 25vh;
         border-radius: 10px;
@@ -15,86 +15,22 @@
     }  
 }
 
-@media (min-width: 1280px) {
-    header {
-        position: fixed;
-        width: 100vw;
-        height: 5vh;
-        background-color: black;
-    }
+@media (min-width: 1000px) {
 
-    main.main-container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    article.product-content {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-    }
-
-    section.product-by-category {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5vh;
-        height: 60vh;
-    }
-
-    section.product-by-category#smartphones {
-        background-color: white;
-        border-bottom: 1vh solid rgb(173, 173, 173);
-    }
-
-    section.product-by-category#laptops {
-        background-color: rgb(237, 230, 230);
-    }
-
-    section.product-by-category#fragrances {
-        background-color: rgb(248, 239, 239);
-        border-bottom: 1vh solid rgb(173, 173, 173);
-    }
-
-    section.product-by-category#skincare {
-        background-color: white;
-    }
-
-    .category-title {
-        color: rgb(8, 11, 98);
-        font-size: 3rem;
-        text-transform: capitalize;
-    }
-
-    section ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    section ul {
+    section.product-by-category ul {
         display: flex;
         width: 86vw;
         overflow: auto;
         gap: 1vw;
     }
 
-    section h3 {
-        text-align: center;
-    }
-
-    section li {
-        list-style: none;
-        margin: 0.5vw;
-
-    }
-
-    section li img {
+    section.product-by-category li img {
         width: 20vw;
         height: 20vh;
         border-radius: 10px;
         margin-bottom: 1vh;
+    }
+    section.product-by-category li h3{
+        font-size: 1.5rem;
     }
 }

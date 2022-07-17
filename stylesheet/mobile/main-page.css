@@ -22,6 +22,9 @@ section.product-by-category{
     gap: 5vh;
     height: 60vh;
 }
+section.product-by-category ul::-webkit-scrollbar{
+    display: none;
+}
 section.product-by-category#smartphones{
     background-color: white;
     border-bottom: 1vh solid rgb(173, 173, 173);
@@ -41,9 +44,6 @@ section.product-by-category#skincare{
     font-size: 3rem;
     text-transform: capitalize;
 }
-section.product-by-category ul::-webkit-scrollbar{
-    display: none;
-}
 section.product-by-category ul{
     display: flex;
     width: 80vw;
@@ -58,6 +58,9 @@ section.product-by-category li{
     list-style: none;
     margin: 0.5vw;
 
+}
+section.product-by-category li h3{
+    font-size: 2rem;
 }
 section.product-by-category li img{
     width: 80vw;
