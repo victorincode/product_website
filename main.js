@@ -1,4 +1,4 @@
-
+import {ProductPage} from "./product/productPage.js"
 class MainPage {
     #productData = {};
     #databaseLink = "https://dummyjson.com/products";
@@ -10,7 +10,6 @@ class MainPage {
         await this.#loadApiData();
         this.category = "smartphones";
         this.#populateContent();
-        console.log(this.#productData)
     }
     // only allow a category to be changed to a valid entry in the database
     set category(newCategory) {
@@ -47,19 +46,40 @@ class MainPage {
             categoryTitle.className = this.#categoryClassName;
             categoryTitle.innerText = category;
             const ulElement = document.createElement("ul");
+            ulElement.addEventListener("click", event =>{
+                if(event.target.nodeName !== "IMG") return;
+                let productId = event.target.id;
+                // Get the digit number of the element's id.
+                // This only works because I have less than 10 items per category.
+                productId = productId[productId.length-1];
+                article.remove();
+                const productContainer = document.createElement("article");
+                productContainer.className = "product-container";
+                const main = document.querySelector("main");
+                main.append(productContainer);
+                const productPage = new ProductPage(productId);
+                productPage.run();
+            });
             section.append(categoryTitle);
             section.append(ulElement);
             article.appendChild(section);
+            let count = 0;
             for(let item of this.#productData[category]){
                 const product = document.createElement("li");
                 const itemName = document.createElement("h3");
                 itemName.textContent = item.title;
                 const productImage = document.createElement("img");
                 productImage.src = item.thumbnail;
+                productImage.id = `${category}-${count}`;
+                // const productImage = document.createElement("input");
+                // productImage.type = "image";
+                // productImage.src = item.thumbnail;
+                // productImage.name = item.id;
                 product.appendChild(productImage);
                 product.appendChild(itemName);
                 ulElement.appendChild(product);
                 article.append(section);
+                count++;
             }
         }
 

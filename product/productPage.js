@@ -1,15 +1,16 @@
 
-class ProductPage {
+export class ProductPage {
     #databaseLink = "https://dummyjson.com/products/";
     #productData = {};
-    #productId = 1;
+    #productId;
     #productContainer;
-    constructor() {
+    constructor(productId) {
         this.#productContainer = document.querySelector("article");
+        this.#productId = productId;
+        console.log("id was set to:", this.#productId);
     }
     run = async () => {
         await this.#loadApiData();
-        console.log(this.#productData);
         this.#populateContent();
 
     }
@@ -68,5 +69,3 @@ class ProductPage {
 
 }
 
-const productPage = new ProductPage();
-productPage.run();

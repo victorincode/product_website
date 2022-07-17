@@ -12,12 +12,6 @@
     gap: 5vh;
 }
 
-header {
-    position: fixed;
-    width: 100vw;
-    height: 5vh;
-    background-color: rgb(2, 51, 50);
-}
 
 main.main-container {
     width: 96vw;
@@ -51,7 +45,7 @@ section.item-information-container{
     flex-direction: column;
     background-color: aqua;
 }
-/* This is for the price */
+/* This is for the price
 section.item-information-container h2{
 
-}
+} */
