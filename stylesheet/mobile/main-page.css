@@ -51,17 +51,16 @@ section.product-by-category ul{
     gap: 4vw;
 }
 
-section.product-by-category h3{
+section.product-by-category h2{
     text-align: center;
+    font-size: 1.75rem;
 }
 section.product-by-category li{
     list-style: none;
     margin: 0.5vw;
 
 }
-section.product-by-category li h3{
-    font-size: 2rem;
-}
+
 section.product-by-category li img{
     width: 80vw;
     height: 30vh;

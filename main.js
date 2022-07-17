@@ -58,7 +58,7 @@ class MainPage {
             let count = 0;
             for(let item of this.#productData[category]){
                 const product = document.createElement("li");
-                const itemName = document.createElement("h3");
+                const itemName = document.createElement("h2");
                 itemName.textContent = item.title;
                 const productImage = document.createElement("img");
                 productImage.src = item.thumbnail;

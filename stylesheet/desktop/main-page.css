@@ -13,6 +13,9 @@
         border-radius: 10px;
         margin-bottom: 1vh;
     }  
+    section.product-by-category h2{
+        font-size: 1.5rem;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -30,7 +33,7 @@
         border-radius: 10px;
         margin-bottom: 1vh;
     }
-    section.product-by-category li h3{
-        font-size: 1.5rem;
+    section.product-by-category h2{
+        font-size: 1.25rem;
     }
 }

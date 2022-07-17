@@ -57,7 +57,7 @@ export class ProductPage {
         const itemInformationContainer = document.createElement("section");
         this.#productContainer.append(itemInformationContainer);
         itemInformationContainer.className = "item-information-container";
-        const itemTitle = document.createElement("h2");
+        const itemTitle = document.createElement("h3");
         itemTitle.innerText = `${this.#productData.title}`;
         itemInformationContainer.appendChild(itemTitle);
         
@@ -68,7 +68,7 @@ export class ProductPage {
         const itemPrice = document.createElement("h2");
         const initialPrice = this.#productData.price;
         const discount = (initialPrice * this.#productData.discountPercentage);
-        const currentPrice = Math.floor(initialPrice - (discount/100));
+        const currentPrice = Math.ceil(initialPrice - (discount/100));
         itemPrice.innerHTML = `
             <s>$${initialPrice}</s> $${currentPrice}
         `;
