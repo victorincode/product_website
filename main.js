@@ -48,16 +48,8 @@ class MainPage {
             const ulElement = document.createElement("ul");
             ulElement.addEventListener("click", event =>{
                 if(event.target.nodeName !== "IMG") return;
-                let productId = event.target.id;
-                // Get the digit number of the element's id.
-                // This only works because I have less than 10 items per category.
-                productId = productId[productId.length-1];
-                article.remove();
-                const productContainer = document.createElement("article");
-                productContainer.className = "product-container";
-                const main = document.querySelector("main");
-                main.append(productContainer);
-                const productPage = new ProductPage(productId);
+                // Change this later to have proper ids for all images.
+                const productPage = new ProductPage(this.#productData[category][event.target.id]);
                 productPage.run();
             });
             section.append(categoryTitle);
@@ -70,11 +62,9 @@ class MainPage {
                 itemName.textContent = item.title;
                 const productImage = document.createElement("img");
                 productImage.src = item.thumbnail;
-                productImage.id = `${category}-${count}`;
-                // const productImage = document.createElement("input");
-                // productImage.type = "image";
-                // productImage.src = item.thumbnail;
-                // productImage.name = item.id;
+                productImage.alt = `Product image of ${category}`;
+                productImage.id = count;
+                // productImage.id = `${category}-${count}`;
                 product.appendChild(productImage);
                 product.appendChild(itemName);
                 ulElement.appendChild(product);

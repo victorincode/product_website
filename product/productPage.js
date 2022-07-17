@@ -2,29 +2,35 @@
 export class ProductPage {
     #databaseLink = "https://dummyjson.com/products/";
     #productData = {};
-    #productId;
     #productContainer;
-    constructor(productId) {
+    constructor(product) {
+        this.#productData = product;
+        this.#init();
         this.#productContainer = document.querySelector("article");
-        this.#productId = productId;
-        console.log("id was set to:", this.#productId);
+
     }
-    run = async () => {
-        await this.#loadApiData();
+    // Get the page ready for loading by clearing out the previous page
+    // and making proper preparations.
+    #init = () => {
+        const article = document.querySelector("article");
+        article.remove();
+        const productContainer = document.createElement("article");
+        productContainer.className = "product-container";
+        const main = document.querySelector("main");
+        main.append(productContainer);
+
+    }
+    run = () => {
         this.#populateContent();
 
     }
-    #loadApiData = async () => {
-        let retrievedData = await fetch(this.#databaseLink)
-            .then(response => response.json());
-        // We only want to keep the products.
-        retrievedData = retrievedData['products'];
-        this.#productData = retrievedData[this.#productId];
-    }
-
+   
     #populateContent = () => {
         this.#loadItemInformation();
         this.#loadAllThumbnails();
+        const body = document.querySelector("body");
+        body.scrollTo(0,0);
+
     }
     #loadAllThumbnails = () => {
         const thumbnailContainer = document.createElement("section");
@@ -41,6 +47,7 @@ export class ProductPage {
         const liElement = document.createElement("li");
         const productImage = document.createElement("img");
         productImage.src = this.#productData.images[id];
+        productImage.alt = `Product image of ${this.#productData.title}`;
         liElement.appendChild(productImage);
         return liElement;
     }
