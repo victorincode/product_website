@@ -5,6 +5,7 @@ export class ProductPage {
     #productContainer;
     constructor(product) {
         this.#productData = product;
+        console.log(product);
         this.#init();
         this.#productContainer = document.querySelector("article");
 
@@ -59,19 +60,19 @@ export class ProductPage {
         const itemTitle = document.createElement("h2");
         itemTitle.innerText = `${this.#productData.title}`;
         itemInformationContainer.appendChild(itemTitle);
-
+        
+        const itemDescription = document.createElement("p");
+        itemDescription.innerHTML = `${this.#productData.description}`;
+        itemInformationContainer.appendChild(itemDescription);
+    
         const itemPrice = document.createElement("h2");
         const initialPrice = this.#productData.price;
         const discount = (initialPrice * this.#productData.discountPercentage);
-        const currentPrice = Math.ceil(initialPrice - (discount/100));
+        const currentPrice = Math.floor(initialPrice - (discount/100));
         itemPrice.innerHTML = `
             <s>$${initialPrice}</s> $${currentPrice}
         `;
         itemInformationContainer.appendChild(itemPrice);
-
-        const itemDescription = document.createElement("p");
-        itemDescription.innerHTML = `${this.#productData.description}`;
-        itemInformationContainer.appendChild(itemDescription);
     }
 
 }

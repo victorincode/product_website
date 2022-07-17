@@ -1,19 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Rajdhani', sans-serif;
-}
-body, html{
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-}
-header{
-    position: fixed;
-    width: 100vw;
-    height: 5vh;
-    background-color: black;
-}
+
+
 main.main-container{
     width: 100vw;
     height: 100vh;
@@ -55,34 +41,27 @@ section.product-by-category#skincare{
     font-size: 3rem;
     text-transform: capitalize;
 }
-section ul::-webkit-scrollbar{
+section.product-by-category ul::-webkit-scrollbar{
     display: none;
 }
-section ul{
+section.product-by-category ul{
     display: flex;
     width: 80vw;
     overflow: auto;
     gap: 4vw;
 }
 
-section h3{
+section.product-by-category h3{
     text-align: center;
 }
-section li{
+section.product-by-category li{
     list-style: none;
     margin: 0.5vw;
 
 }
-section li img{
+section.product-by-category li img{
     width: 80vw;
     height: 30vh;
     border-radius: 10px;
     margin-bottom: 1vh;
 }
-
-/* section input[type=image]{
-    width: 80vw;
-    height: 30vh;
-    border-radius: 10px;
-    margin-bottom: 1vh;
-} */

@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rajdhani', sans-serif;
+}
+body, html{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
